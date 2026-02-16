@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+input[type="text"] {
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+}
+
+button {
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.item:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-content strong {
+  display: block;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.item-content p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.item-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.item-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-width: 80px;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.btn-edit:hover {
+  box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.btn-delete:hover {
+  box-shadow: 0 5px 15px rgba(250, 112, 154, 0.3);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.empty-state small {
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .item-actions {
+    width: 100%;
+  }
+
+  .item-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px 15px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
