@@ -8,8 +8,9 @@ El sistema utiliza un archivo JSON como base de datos para almacenar los product
 
 ## Características Principales
 
-- ✅ API REST para gestión de productos
-- ✅ Interfaz web moderna
+- ✅ API REST completa para gestión de productos (CRUD)
+- ✅ Interfaz web moderna y responsive
+- ✅ Crear, editar y eliminar productos desde el dashboard
 - ✅ Persistencia de datos en JSON
 - ✅ Middleware de logging para registro de peticiones
 - ✅ Variables de entorno para configuración
@@ -129,12 +130,92 @@ Crea un nuevo producto
 ```json
 {
   "name": "Nuevo Producto",
-  "description": "Descripción del nuevo producto"
+  "description": "Descripción del nuevo producto",
+  "price": 99.99
+}
+```
+
+**Respuesta exitosa (201):**
+
+```json
+{
+  "id": 2,
+  "name": "Nuevo Producto",
+  "description": "Descripción del nuevo producto",
+  "price": 99.99
+}
+```
+
+### PUT /api/items/:id
+
+Actualiza un producto existente
+
+**Parámetros:**
+
+- `id` - ID del producto a actualizar
+
+**Body:**
+
+```json
+{
+  "name": "Producto Actualizado",
+  "description": "Nueva descripción del producto",
+  "price": 149.99
+}
+```
+
+**Respuesta exitosa (200):**
+
+```json
+{
+  "id": 1,
+  "name": "Producto Actualizado",
+  "description": "Nueva descripción del producto",
+  "price": 149.99
+}
+```
+
+### DELETE /api/items/:id
+
+Elimina un producto por su ID
+
+**Parámetros:**
+
+- `id` - ID del producto a eliminar
+
+**Respuesta exitosa (200):**
+
+```json
+{
+  "message": "Item deleted",
+  "id": 1
 }
 ```
 
 ## Uso del Dashboard Web
 
-1. Ingresa el nombre y descripción del producto en los campos del formulario
-2. Haz clic en "Agregar producto" para crearlo
-3. Los productos aparecerán listados debajo del formulario
+El dashboard proporciona una interfaz completa para gestionar tus productos:
+
+### Agregar un Producto
+
+1. Completa los campos del formulario:
+   - **Nombre del producto**: Nombre descriptivo
+   - **Descripción del producto**: Detalles del producto
+   - **Precio del producto**: Valor numérico (ej: 99.99)
+2. Haz clic en **"Agregar producto"**
+3. El producto aparecerá en la lista debajo del formulario
+
+### Editar un Producto
+
+1. En la lista de productos, haz clic en el botón **"Editar"** del producto que deseas modificar
+2. El formulario se llenará automáticamente con los datos del producto
+3. El botón cambiará a **"Actualizar producto"** y aparecerá un botón **"Cancelar"**
+4. Modifica los campos que necesites
+5. Haz clic en **"Actualizar producto"** para guardar los cambios
+6. O haz clic en **"Cancelar"** para descartar los cambios
+
+### Eliminar un Producto
+
+1. En la lista de productos, haz clic en el botón **"Eliminar"** del producto que deseas borrar
+2. Aparecerá una confirmación preguntando si estás seguro
+3. Confirma la acción para eliminar el producto permanentemente
