@@ -70,6 +70,33 @@ input[type="text"]::placeholder {
   color: #999;
 }
 
+input[type="number"] {
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="number"]::placeholder {
+  color: #999;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
+}
+
 button {
   padding: 15px 30px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -157,6 +184,15 @@ button:active {
 
 .btn-delete:hover {
   box-shadow: 0 5px 15px rgba(250, 112, 154, 0.3);
+}
+
+.btn-cancel {
+  background: linear-gradient(135deg, #868f96 0%, #596164 100%);
+  text-transform: none;
+}
+
+.btn-cancel:hover {
+  box-shadow: 0 5px 15px rgba(134, 143, 150, 0.3);
 }
 
 .empty-state {

@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 1771268353425,
+    "name": "Manzana",
+    "description": "manzana roja",
+    "price": 3000
+  },
+  {
+    "id": 1771268365308,
+    "name": "banano",
+    "description": "banano",
+    "price": 2000
+  }
+]
